@@ -1,0 +1,83 @@
+
+.container {
+    width: 960px;
+    min-height: 400px;
+    margin: 0 auto;
+    border: 3px dashed orange;
+}
+
+li {
+    display: inline;        /* width, height 적용이 안 됨 */
+    /* display: inline-block; */  /* width, height 적용이 됨  */
+    /* inline : 크기를 가지지 않고, 한 줄에 나란히 배치 */
+    /* block : 크기를 가지면서, 한 줄 전체를 차지하면서 배치 */
+    /* inline-block : 크기를 가지면서, 한 줄에 나란히 배치 */
+    width: 150px;
+    height: 50px;
+    line-height: 50px;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+li:hover {
+    background-color: #ddd;
+    cursor: pointer;
+}
+
+/* 화면에 보이지 않게 지정 */
+.none { display: none; }
+.hidden { visibility: hidden;}
+
+/* 요소를 생성 > 랜더링 > 출력 */
+/* 
+    display : none;
+    - 화면에 요소 자체가 생성되지 않는다.
+      레이아웃애 영향을 미친다.
+  
+      visibility : hidden;
+    - 요소를 생성하지만 랜더링하지 않는다.
+      레이아웃애 영향을 미친다.
+*/
+
+/* grid */
+.grid-container {
+    display: grid;
+    /* 
+    grid-template-columns
+    Grid 레이아웃의 열의 크기를 지정하는 속성
+    - 여기서는 3개의 열의 크기륽 auto 로 지정
+    */
+    grid-template-columns: auto auto auto;
+    background-color: royalblue;
+    padding: 10px;
+}
+
+.item {
+    background-color: lightblue;
+    border: 1px solid black;
+    padding: 20px;
+    text-align: center;
+}
+
+.item img { width: 100%;}
+
+/* flex */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    /* flex-wrap : 아이템들의 줄바꿈 여부를 지정하는 속성 */
+    padding: 0 4px;
+}
+
+.col {
+    flex-basis: 33.3333%; /* 아이템의 기본 너비 */
+    min-width: 33.3333%;
+    padding: 0px 4px;
+    box-sizing: border-box;
+}
+
+.col img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+}

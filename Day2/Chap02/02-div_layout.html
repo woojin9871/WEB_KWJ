@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML 래이아웃</title>
+    
+    <!-- 폰트 - 배달의 민족 - 도현체 -->
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Do Hyeon', sans-serif;
+        }
+        
+        /* # : id 속성을 지정하는 선택자 */
+        #header {
+            background-color: lightgray;
+            height: 100px;
+        }
+
+        #nav {
+            background-color: #339999;
+            color: white;
+            width: 200px;
+            height: 300px;
+            float: left;
+        }
+
+        #section {
+            width: calc(100% - 200px);
+            height: 300px;
+            text-align: left;
+            float: left;
+            padding: 10px;
+            border: 1px solid #339999;
+        }
+
+        #footer {
+            background-color: #ffcc00;
+            height: 100px;
+            clear: both;
+        }
+        #header, #footer { line-height: 100px; } 
+        #nav, #section { line-height: 240px;}
+
+    </style>
+</head>
+<body>
+    <h1>div 요소를 이용한 레이아웃</h1>
+    <div id="header">
+        <h2>HEADER 영역</h2>
+    </div>
+    <div id="nav">
+        <h2>NAV 영역</h2>
+    </div>
+    <div id="section"> 
+        <h2>SECTION 영역</h2>
+    </div>
+    <div id="footer">
+        <h2>FOOTER 영역</h2>
+    </div>
+
+</body>
+</html>

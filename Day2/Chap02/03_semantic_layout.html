@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시맨틱 요소 - 레이아웃</title>
+
+    <!-- NotoSansKR -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+
+    <style>
+        * { box-sizing: border-box;margin: 0; padding: 0;}
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+
+        header {
+            background-color: lightgray;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        nav {
+            float: left;
+            width: 20%;
+            height: 300PX;
+            background-color: #339999;
+            padding: 20px;
+        }
+
+        section::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+        
+        footer {
+            background-color: #ffcc00;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+        }
+
+        /* 반은형 적용 - 가로 사이즈 600px 이하 */
+        @media screen and (max-width: 600px) {
+            nav,
+            article {
+                width: 100%;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <hi>semantic 태그를 이용한 레이아웃</hi>
+    <header>
+        <h2>HEADER</h2>
+    </header>
+
+    <section>
+        <nav>
+            <ul>
+                <!-- (li>a{menu00$})*4 -->
+                <li><a href="#">menu001</a></li>
+                <li><a href="#">menu002</a></li>
+                <li><a href="#">menu003</a></li>
+                <li><a href="#">menu004</a></li>
+            </ul>
+        </nav>
+
+        <article>
+            <hi>휴먼교육센터</hi>
+            <p>
+                천지는 같으며, 타오르고 있는가? 타오르고 방황하였으며, 얼음 속에 끓는 같은 인간은 이것을 것이다. 실현에 듣기만 피가 것이다. 투명하되 붙잡아 이성은 보이는 만물은 철환하였는가? 품으며, 긴지라 지혜는 이것이다. 때에, 것은 착목한는 할지니, 위하여서, 우리 많이 동력은 인간의 교향악이다.
+            </p>
+            <p>
+                그들은 온갖 풀밭에 과실이 것이 수 위하여, 싶이 우리의 말이다. 피는 있을 사는가 넣는 꽃이 구하지 때문이다. 실로 창공에 우리 피가 모래뿐일 청춘을 품고 이것이다. 있는 못할 이상을 아니다. 위하여, 속에 하였으며, 앞이 영락과 봄바람을 투명하되 끓는다.
+            </p>
+            
+        </article>
+    </section>
+
+    <footer>
+        <h2>FOOTER</h2>
+    </footer>
+</body>
+</html>

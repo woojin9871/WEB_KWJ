@@ -1,0 +1,46 @@
+@charset "UTF-8";
+
+/* TODO: 여기에 작성해보세요 */
+* { margin: 0; padding: 0; }
+
+/* 태그 선택자 : 태그의 이름으로 요소를 지정하는 선택자 */
+header {
+    height: 85px;
+    background-color: #f0f0f0;
+    padding: 10px;
+}
+
+header h1 {
+    float: left;
+    font-size: 1.8rem; /* rem :html(루트) 요소에 대한 배율을 적용 (기본 16px)*/
+}
+
+header ul { float: right; list-style-type: none; }
+header ul li {
+    display: inline-block;
+}
+
+article {
+    min-height: 500px;
+}
+
+article section {
+    float: left;
+    padding: 50px;
+}
+
+article aside {
+    float: right;
+    width: 200px;
+    background-color: #fedd31;
+    padding: 20px;
+    text-align: center;
+}
+
+footer {
+    height: 10px;
+    line-height: 10px;
+    background-color: #c0dce7;
+    text-align: center;
+    padding: 20px;
+}
