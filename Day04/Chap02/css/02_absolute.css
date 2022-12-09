@@ -1,4 +1,6 @@
 
+h1 { text-align: center; }
+
 .container {
     position: relative;
     width: 1200px;
