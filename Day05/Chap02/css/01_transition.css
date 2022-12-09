@@ -94,7 +94,7 @@
 
     transition-duration: 2s;
     /* 3차 베지어 곡선을 이용한 변환속도를 지정하는 함수 */
-    transition-timing-function: cubic-bezier();
+    transition-timing-function: cubic-bezier(cubic-bezier(.64,-0.04,0,.96));
 }
 
 .transition10:hover { width: 1400px; }
