@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중첩 반복문</title>
+
+    <script>
+
+        let N = prompt('숫자를 입력해주세요')
+        N = Number(N)
+        let result = ''
+
+        // 중첩 반복문
+        // 바깥 for - i : 열을 담당
+        // 안쪽 for - j : 열을 담당
+        for(let i = 1; i <= N; i++) {
+            for(let j = 0; j < i; j++ ) {
+                result += '*'
+            }
+            result += '<br>'
+        }
+
+        document.write(result)
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

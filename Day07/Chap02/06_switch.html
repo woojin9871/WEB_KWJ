@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>switch 문</title>
+
+    <script>
+        // Number() : 문자열 자료형을 숫자형으로 변환 
+        const menuNo = Number( prompt('메뉴 번호를 입력하세요') )
+        let menu = ''
+
+        switch (menuNo) {
+            case 1:
+                menu = '황금올리브 반반 치킨'
+                break;
+            case 2: 
+                menu = '팔도피자'
+                break;
+            case 3: 
+                menu = '어깨피자'
+                break;
+            case 4: 
+                menu = '팔자피자'
+                break;
+            default:
+                alert('메뉴번호가 존재하지 않습니다')
+                break;
+        }
+        if ( menuNo >= 1 && menuNo <= 4)
+            alert(`${menu} 이(/가) 주문되었습니다. \n 30분내로 도착할 에정입니다`)
+        else 
+            alert('주문을 실패하였습니다')
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>
