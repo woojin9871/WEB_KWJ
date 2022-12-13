@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문서 준비 이벤트</title>
+    <script>
+        // DOMContentLoaded : 문서객체 모델이 로딩됐을 때
+        document.addEventListener('DOMContentLoaded', () => {
+            // 문서가 모두 로디된 후 실행
+            document.getElementById('title').innerHTML = '문서 준비 완료' 
+        })
+
+        /*
+            # JavaScript 로 작성한 문서 준비 이벤트
+            document.addEventListener('DOMContentLoaded', () => { } )
+
+            # jQuery 로 작성한 문서 이벤트
+                $(document). ready(function( { ... }) )
+        */
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

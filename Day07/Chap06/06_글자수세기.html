@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>글자 수 세기</title>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const textarea = document.querySelector('textarea')
+            const h2 = document.querySelector('h2')
+            const ul = document.querySelector('ul')
+
+            // 이벤트 처리
+            textarea.addEventListener('keyup', (event) => {
+                //글자 수
+                const length = textarea.value.length
+                h2.textContent = `글자 수 : ${length}`
+
+                // keyCode : 13 (엔터)
+                if( event.keyCode == '13' ) {
+                    const text = textarea.value
+                    // ul.innerHTML = '<li>' + text + '</li>'
+                    const li = document.createElement('li')
+                    li.textContent = text
+                    ul.appendChild(li)          // ul 태그 자식요소로 li 추가
+                    textarea.value = ''
+                    h2.textContent = `글자 수 : 0`
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+    
+    <ul></ul>
+    <textarea name="" id="" cols="30" rows="3"></textarea>
+    <h2></h2>
+    
+</body>
+</html>
