@@ -1,5 +1,4 @@
-
-* { margin: 0; padding: 0; box-sizing: border-box;}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 header {
     width: 100%;
@@ -13,14 +12,14 @@ header {
 }
 
 .item {
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
     background-color: royalblue;
     color: white;
     text-align: center;
     width: 400px;
     height: 400px;
-    line-height: 400;
+    line-height: 400px;
     font-size: 50px;
 }
 
@@ -43,14 +42,15 @@ header {
     height: 150px;
     background-color: yellow;
     margin: 0 auto;
-    border:  3px solid black;
+    border: 3px solid black;
     box-sizing: border-box;
 }
+
 
 .flex-container {
     display: flex;
     width: 600px;
-    margin: 20px auto;
+    margin: 30px auto;
     justify-content: space-between;
 }
 
@@ -63,29 +63,32 @@ button {
     border: none;
     background-color: cornflowerblue;
     color: white;
+    cursor: pointer;
 }
 
 button:active,
-button:hover
+button:hover 
 {
     background-color: royalblue;
 }
+
 
 .inner {
     padding: 10px;
     height: 150px;
 }
 
+
 #box5.active {
-    animate: changeBG 2s;
-    animation-fill-mode: forwards; /* 애니메이션 마지막 프레임에 고정 */
+    animation: changeBG 2s;
+    animation-fill-mode: forwards;  /* 애니메이션 마지막 프레임에 고정 */
 }
 
 @keyframes changeBG {
     0% { }
-
-    100% {
+    
+    100% { 
         width: 600px;
-        background-color: bisque;
+        background-color: orange; 
     }
 }

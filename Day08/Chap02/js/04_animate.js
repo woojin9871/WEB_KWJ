@@ -1,21 +1,20 @@
-
 $(function() {
 
     /*
         fadeXXX( 인자1 )
-        * 인자1 : druation (시간 : ms), ('slow', 'fast') 
-        
+        * 인자1 : duration  (시간 : ms), ('slow', 'fast')
+
         fadeXXX( 인자1, 인자2 )
-        * 인자1 : druation (시간 : ms), ('slow', 'fast') 
-        * 인자2 : function() - 애니메이션 후, 실향할 콜백함수
+        * 인자1 : duration  (시간 : ms), ('slow', 'fast')
+        * 인자2 : function() - 애니메이션 후, 실행할 콜백함수
         
         fadeXXX( 인자1, 인자2, 인자3 )
-        * 인자1 : druation (시간 : ms), ('slow', 'fast') 
+        * 인자1 : duration  (시간 : ms), ('slow', 'fast')
         * 인자2 : easing (swing, linear)
         * 인자3 : function() - 애니메이션 후, 실행할 콜백함수
         
-         fadeXXX( 인자1, 인자2, 인자3, 인자4 )
-        * 인자1 : druation (시간 : ms), ('slow', 'fast') 
+        fadeTo( 인자1, 인자2, 인자3, 인자4 )
+        * 인자1 : duration  (시간 : ms), ('slow', 'fast')
         * 인자2 : opacity (불투명도 : 0.0 ~ 1)
         * 인자3 : easing (swing[default], linear)
         * 인자4 : function() - 애니메이션 후, 실행할 콜백함수
@@ -37,90 +36,92 @@ $(function() {
     $('#fadeTo').on('click', function() {
         $('#box1').fadeTo('slow', 0.2)
     })
-   
-    /* hide & show */
-    /*
-        hide(인자1, 인자2)
-        * 인자1 : duration (시간)
-        - margin, padding, width, height, opacuty 속성등을
-        지정한 값에서 0으로, 지정시간(ms) 동안 애니메이션 동작을 한다
-        그 이후에, dispaly : none 으로 변견되어 사라진다.
-        (1s = 1000ms)
 
-        * 인자2 : 콜배함수
-          - 애니메이션 완료 후, 호출할 콜맥 함수
+    /* hide & show */
+    /* 
+        hide( 인자1, 인자2 )
+        * 인자1 : duration (시간)
+        - margin, padding, width, height, opacity 속성등을
+          지정된 값에서 0으로, 지정시간(ms) 동안 애니메이션 동작을 한다.
+          그 이후에, display : none 으로 변경되어 사라진다.
+          (1s = 1000ms)
+
+        * 인자2 : 콜백함수
+          - 애니메이션 완료 후, 호출할 콜백 함수
     */
     $('#hide').on('click', function() {
         $('#box2').hide()
     })
-   
+
     $('#show').on('click', function() {
         $('#box2').show()
     })
-   
+    
     $('#hide1000').on('click', function() {
-        $('#box2').hide1000(1000)
-    })
-   
-    $('#show1000').on('click', function() {
-        $('#box2').show1000(1000)
+        $('#box2').hide(1000)
     })
 
-   /*
-        slideXXX( 인자1, 인자2)
-        * 인자1 : duration ( 시간 : ms), ("slow", 'fast')
+    $('#show1000').on('click', function() {
+        $('#box2').show(1000)
+    })
+
+    /* 
+        slideXXX( 인자1, 인자2 )
+        * 인자1 : duration  (시간 : ms), ('slow', 'fast')
         * 인자2 : 콜백함수
-         
-        slideXXX( 인자1, 인자2, 인자3)
-        * 인자1 : duration ( 시간 : ms), ("slow", 'fast')
+        
+        slideXXX( 인자1, 인자2, 인자3 )
+        * 인자1 : duration  (시간 : ms), ('slow', 'fast')
         * 인자2 : easing (swing[default], linear)
         * 인자3 : 콜백함수
-         
+        
     */
     $('#slideUp').on('click', function() {
-        $('box3').slideUp(1000)
+        $('#box3').slideUp(1000)
     })
-   
+
     $('#slideDown').on('click', function() {
-        $('box3').slideDown(1000)
+        $('#box3').slideDown(1000)
     })
-   
+    
     $('#slideToggle').on('click', function() {
-        $('box3').slideToggle(1000)
+        $('#box3').slideToggle(1000)
     })
 
-    let sw = false      // 버튼 클릭 여부
-    $('#animate').on('click', function() {
-        
-        if( !sw ) {
-            // animate( '스타일', 시간)
-            $('#box4').animate({
-                'opacity' : '0.3',
-                'width' : '600px'
-            }, 3000)
 
+    let sw = false       // 버튼 클릭 여부
+    $('#animate').on('click', function() {
+
+        if( !sw ) {
+            // animate( '스타일', 시간 )
+            $('#box4').stop().animate({
+                'opacity'   : '0.3',
+                'width'     : '600px',
+            }, 3000)
+            
             sw = true
         }
         else {
-            $('#box4'). animate({
-                'opacity' : '1',
-                'width' : '150px'
+            $('#box4').stop().animate({
+                'opacity'   : '1',
+                'width'     : '150px',
             }, 3000)
 
-            sw = false 
+            sw = false
         }
     })
 
-    /*
-        .animate() 메서드는 적용할 수 있는 스타일 속성이 재한되어 있다
+    /* 
+        .animate() 메서드에는 적용할 수 있는 스타일 속성이 제한되어 있다.
         원하는 스타일을 지정하여 애니메이션을 적용하는 방법
         1. 이벤트 정의
             ex. click 이벤트
         2. 애니메이션 적용될 요소에 'active' 라는 클래스 추가/삭제(토글)
+            - toggleClass('active')
+        3. CSS 에서 .active 에 애니메이션 적용할 스타일 지정
     */
-   
-    $('#active').on('click', function() {
+    $('#active').on('click', function(){
         $('#box5').toggleClass('active')
     })
-})
 
+})
